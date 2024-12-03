@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out source code...'
-                git branch: 'main', url: 'https://github.com/BDN-ID/faraday.git'
+                git branch: 'main', url: 'https://github.com/Bernadeta998/faraday.git'
             }
         }
 
