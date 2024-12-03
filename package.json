@@ -1,0 +1,49 @@
+{
+  "name": "morbiusautomationtest",
+  "version": "1.0.0",
+  "description": "Morbius API Automation Test",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "getOperator": "mocha test/morbius-external/anonymous/operator/getOperator.js",
+    "searchOperator": "mocha test/morbius-external/anonymous/operator/searchOperator.js",
+    "getPopularOperator": "mocha test/morbius-external/anonymous/operator/getPopularOperator.js",
+    "getFavoriteOperator": "mocha test/morbius-external/anonymous/operator/getFavoriteOperator.js",
+
+    "getProduct": "mocha test/morbius-external/anonymous/product/getProducts.js",
+
+    "getMerchantProfile": "mocha test/morbius-external/anonymous/merchant/getMerchantProfile.js",
+
+    "getPaymentMethod": "mocha test/morbius-external/anonymous/payment_method/getPaymentMethod.js",
+
+    "getMerchantBanner": "mocha test/morbius-external/anonymous/merchant_banner/getMerchantBanner.js",
+
+    "getProductTypes": "mocha test/morbius-external/anonymous/product_types/getProductTypes.js",
+
+    "purchase_data": "mocha test/morbius-external/anonymous/order/purchase_data.js",
+
+    "flash_sale": "mocha test/morbius-external/anonymous/flash_sale/getFlashSale.js",
+
+    "getPrivacyPolicy" : "mocha test/morbius-external/anonymous/configuration/privacypolicy.js",
+
+    "getTNC" : "mocha test/morbius-external/anonymous/configuration/tnc.js",
+
+    "test": "mocha test/morbius-external/anonymous/**/*.js"
+  },
+  "author": "Bernadeta",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "faker": "^5.5.3",
+    "mysql2": "^3.9.7",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.29.0",
+    "chai": "^5.1.0",
+    "mocha": "^10.4.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "mochawesome": "^7.1.3",
+    "supertest": "^7.0.0"
+  }
+}
