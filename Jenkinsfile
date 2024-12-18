@@ -20,14 +20,7 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                echo 'Running Mocha, Chai, and Supertest tests...'
-                sh 'npm run getOperator' // Ensure your package.json has a test script configured
-            }
-        }
-
-        stage('Copy ENV') {
+         stage('Copy ENV') {
             steps {
                 script {
                     def envContent = '''
@@ -46,6 +39,15 @@ pipeline {
                 sh 'cat .env'
             }
         }
+
+        stage('Run Tests') {
+            steps {
+                echo 'Running Mocha, Chai, and Supertest tests...'
+                sh 'npm run getOperator' // Ensure your package.json has a test script configured
+            }
+        }
+
+       
     }
 
     post {
