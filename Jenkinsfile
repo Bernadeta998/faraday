@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeV18' // Matches the NodeJS installation name in Jenkins
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -11,15 +15,15 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'Installing dependencies...'
-                sh 'npm install'
+                echo 'Installing project dependencies...'
+                sh 'npm install' // Install local dependencies
             }
         }
 
         stage('Run Tests') {
             steps {
-                echo 'Running Mocha and Chai tests...'
-                sh 'npm run getOperator'
+                echo 'Running Mocha, Chai, and Supertest tests...'
+                sh 'npm run getOperator' // Ensure your package.json has a test script configured
             }
         }
     }
