@@ -26,6 +26,28 @@ pipeline {
                 sh 'npm run getOperator' // Ensure your package.json has a test script configured
             }
         }
+
+        stage('Copy ENV') {
+            steps {
+                script {
+                    def envContent = '''
+                    HOST=https://morbius-sandbox.bdn.id
+                    HORUS_HOST=https://api.sandbox.herra.id
+                    usernameInternal=internal
+                    passwordInternal=123456
+                    usernameHorus=horus
+                    passwordHorus=MyHorus123456
+                    productData=XLSIT200MB
+                    TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM3MDg1MDcsImlkIjoxLCJtZXJjaGFudF9pZCI6MCwicm9sZV9pZCI6MSwidXNlcm5hbWUiOiJpbnRlcm5hbCJ9.gz4aUTU3EVQDXeQ6Hn8c960xYsPAM6CN6r1k6d29FoM
+                    '''
+                    writeFile file: '.env', text: envContent.trim()
+                }
+                echo "Created .env file with content:"
+                sh 'cat .env'
+            }
+
+            }
+        }
     }
 
     post {
