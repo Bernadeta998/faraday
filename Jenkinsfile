@@ -45,8 +45,6 @@ pipeline {
                 echo "Created .env file with content:"
                 sh 'cat .env'
             }
-
-            }
         }
     }
 
