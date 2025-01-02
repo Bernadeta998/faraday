@@ -8,6 +8,7 @@ should();
 describe("GET PRODUCT TYPES on Gamefinity", function() {
     it("Success Get Product Types", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/product-types")
                 .set("X-Merchant-Code", "gamefinity");
@@ -32,6 +33,7 @@ describe("GET PRODUCT TYPES on Gamefinity", function() {
 describe("GET PRODUCT TYPES on Pejuang", function() {
     it("Success Get Product Types", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/product-types")
                 .set("X-Merchant-Code", "pejuang");

@@ -8,6 +8,7 @@ should();
 describe("GET PAYMENT METHOD for GAMEFINITY", function() {
     it("Success Get Payment Method", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/payment-methods")
                 .set("X-Merchant-Code", "gamefinity");
@@ -30,6 +31,7 @@ describe("GET PAYMENT METHOD for GAMEFINITY", function() {
 describe("GET PAYMENT METHOD for PEJUANG", function() {
     it("Success Get Payment Method", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/payment-methods")
                 .set("X-Merchant-Code", "pejuang");

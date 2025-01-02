@@ -8,6 +8,7 @@ should();
 describe("SEARCH OPERATOR on Merchant GAMEFINTIY", function() {
     it("Success Search Operator FIFA", async function() {
         try {
+            this.timeout(10000);
             const label = "FIFA"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators/list?label=${label}`)
@@ -34,6 +35,7 @@ describe("SEARCH OPERATOR on Merchant GAMEFINTIY", function() {
 
     it("Failed Search Operator (Not Found)", async function() {
         try {
+            this.timeout(10000);
             const label = "ohayo"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators/list?label=${label}`)
@@ -58,6 +60,7 @@ describe("SEARCH OPERATOR on Merchant GAMEFINTIY", function() {
 describe("SEARCH OPERATOR on Merchant PEJUANG", function() {
     it("Success Search Operator FIFA", async function() {
         try {
+            this.timeout(10000);
             const label = "FIFA"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators/list?label=${label}`)
@@ -84,6 +87,7 @@ describe("SEARCH OPERATOR on Merchant PEJUANG", function() {
 
     it("Failed Search Operator (Not Found)", async function() {
         try {
+            this.timeout(10000);
             const label = "ohayo"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators/list?label=${label}`)

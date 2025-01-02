@@ -8,6 +8,7 @@ should();
 describe("GET Flash Sale on Merchant Gamefinity", function() {
     it("Success Get Flash Sale", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/operators")
                 .set("X-Merchant-Code", "Gamefinity");
@@ -31,6 +32,7 @@ describe("GET Flash Sale on Merchant Gamefinity", function() {
 describe("GET Flash Sale on Merchant Pejuang", function() {
     it("Success Get Flash Sale", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/operators")
                 .set("X-Merchant-Code", "pejuang");

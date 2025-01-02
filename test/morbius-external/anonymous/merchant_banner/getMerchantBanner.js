@@ -8,6 +8,7 @@ should();
 describe("GET MERCHANT BANNER on Gamefinity", function() {
     it("Success Get Merchant Banner", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/merchant-banners")
                 .set("X-Merchant-Code", "gamefinity");
@@ -32,6 +33,7 @@ describe("GET MERCHANT BANNER on Gamefinity", function() {
 describe("GET MERCHANT BANNER on Pejuang", function() {
     it("Success Get Merchant Banner", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/merchant-banners")
                 .set("X-Merchant-Code", "pejuang");

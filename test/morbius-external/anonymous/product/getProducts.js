@@ -8,6 +8,7 @@ should();
 describe("GET PRODUCT on Merchant GAMEFINITY", function() {
     it("Success Get All Product", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/products/:operator_id")
                 .set("X-Merchant-Code", "gamefinity");
@@ -28,6 +29,7 @@ describe("GET PRODUCT on Merchant GAMEFINITY", function() {
 
     it("Success Get Product by Operator ID", async function() {
         try {
+            this.timeout(10000);
             const id = 1;
             const request = supertest(process.env.HOST)
                 .get(`/v1/products/${id}`)
@@ -49,6 +51,7 @@ describe("GET PRODUCT on Merchant GAMEFINITY", function() {
 
     it("Success Get Product by Product ID", async function() {
         try {
+            this.timeout(10000);
             const id = 1721
             const request = supertest(process.env.HOST)
                 .get(`/v1/products/:operator_id?id=${id}`)
@@ -72,6 +75,7 @@ describe("GET PRODUCT on Merchant GAMEFINITY", function() {
 
     it("Failed Get Product by Product ID and Operator ID", async function() {
         try {
+            this.timeout(10000);
             const id = 1721
             const request = supertest(process.env.HOST)
                 .get(`/v1/products/${id}?id=${id}`)

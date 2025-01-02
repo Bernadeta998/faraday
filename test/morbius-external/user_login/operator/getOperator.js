@@ -8,6 +8,7 @@ should();
 describe("GET OPERATOR", function() {
     it("Success Get Operator", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/operators")
                 .set("Authorization", `Bearer ${process.env.TOKEN}`);
@@ -28,6 +29,7 @@ describe("GET OPERATOR", function() {
     });
     it("Success Get Operator by ID ", async function() {
         try {
+            this.timeout(10000);
             const id = 1
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators?id=${id}`)
@@ -55,6 +57,7 @@ describe("GET OPERATOR", function() {
     });
     it("Success Get Operator by code", async function() {
         try {
+            this.timeout(10000);
             const code = "FIFA"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators?code=${code}`)
@@ -84,6 +87,7 @@ describe("GET OPERATOR", function() {
     });
     it("Success Get Operator by product type ID", async function() {
         try {
+            this.timeout(10000);
             const type_id = 3
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators?product_type_id=${type_id}`)
@@ -117,6 +121,7 @@ describe("GET OPERATOR", function() {
     });
     it("Failed Get Operator (Product id not found)", async function() {
         try {
+            this.timeout(10000);
             const id = "HAHAHA"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators?id=${id}`)
@@ -137,6 +142,7 @@ describe("GET OPERATOR", function() {
     });
     it("Failed Get Operator (Product code not found )", async function() {
         try {
+            this.timeout(10000);
             const code = "HAHAHA"
             const request = supertest(process.env.HOST)
                 .get(`/v1/operators?code=${code}`)

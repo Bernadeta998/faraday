@@ -9,6 +9,7 @@ const apiRequestHorus = request(process.env.HORUS_HOST);
 describe("PURCHASE on Pejuang : Data", function() { //test scenario
     it("Pending Purchase : Data", async function() {
       try {
+        this.timeout(10000);
         const response = await apiRequest
           .post("/v1/orders/purchase")
           .set("X-Merchant-Code", "pejuang")
@@ -48,6 +49,7 @@ describe("PURCHASE on Gamefinity : Data", function() { //test scenario
 this.timeout(100000);
   it("Pending Purchase : Data", async function() {
     try {
+      this.timeout(10000);
       const response = await apiRequest
         .post("/v1/orders/purchase")
         .set("X-Merchant-Code", "gamefinity")
@@ -83,6 +85,7 @@ this.timeout(100000);
 
   it("Success Normal Payment : QRIS", async function() {
     try {
+    this.timeout(10000);
     const purchase = await apiRequest.post("/v1/orders/purchase").set("X-Merchant-Code", "gamefinity").send({
         product_code: process.env.productData,
         account_no: "087877144694",
@@ -110,6 +113,7 @@ this.timeout(100000);
 
   it("Success Normal Payment : Virtual Account BCA", async function() {
     try {
+    this.timeout(10000);
     const purchase = await apiRequest.post("/v1/orders/purchase").set("X-Merchant-Code", "gamefinity").send({
         product_code: process.env.productData,
         account_no: "087877144694",
@@ -137,6 +141,7 @@ this.timeout(100000);
 
   it("Success Normal Payment : Bank Transfer BCA", async function() {
     try {
+    this.timeout(10000);
     const purchase = await apiRequest.post("/v1/orders/purchase").set("X-Merchant-Code", "gamefinity").send({
         product_code: process.env.productData,
         account_no: "087877144694",

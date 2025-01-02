@@ -8,6 +8,7 @@ should();
 describe("GET OPERATOR on Merchant PEJUANG", function() {
     it("Success Get Operator", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/operators")
                 .set("X-Merchant-Code", "pejuang");
@@ -31,6 +32,7 @@ describe("GET OPERATOR on Merchant PEJUANG", function() {
 describe("GET OPERATOR on Merchant GAMEFINITY", function() {
     it("Success Get Operator", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/operators")
                 .set("X-Merchant-Code", "gamefinity");

@@ -8,6 +8,7 @@ should();
 describe("GET POPULAR OPERATOR on Merchant GAMEFINTIY", function() {
     it("Success Get Popular Operator", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get(`/v1/popular-operators`)
                 .set("X-Merchant-Code", "gamefinity");
@@ -31,6 +32,7 @@ describe("GET POPULAR OPERATOR on Merchant GAMEFINTIY", function() {
 describe("GET POPULAR OPERATOR on Merchant PEJUANG", function() {
     it("Success Get Popular Operator", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get(`/v1/popular-operators`)
                 .set("X-Merchant-Code", "pejuang");

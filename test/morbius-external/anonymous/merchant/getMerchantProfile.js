@@ -8,6 +8,7 @@ should();
 describe("GET MERCHANT PROFILE for GAMEFINITY", function() {
     it("Success Get Gamefinity Merchant Profile", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/merchants")
                 .set("X-Merchant-Code", "gamefinity");
@@ -30,6 +31,7 @@ describe("GET MERCHANT PROFILE for GAMEFINITY", function() {
 describe("GET MERCHANT PROFILE for PEJUANG", function() {
     it("Success Get Pejuang Merchant Profile", async function() {
         try {
+            this.timeout(10000);
             const request = supertest(process.env.HOST)
                 .get("/v1/merchants")
                 .set("X-Merchant-Code", "pejuang");

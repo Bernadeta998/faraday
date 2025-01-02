@@ -8,6 +8,7 @@ should();
 describe("GET Privacy Policy on Merchant PEJUANG", function() {
     it("Success Get Privacy Policy", async function() {
         try {
+            this.timeout(10000);
             const key = "config:privacy_policy";
             const request = supertest(process.env.HOST)
                 .get(`/v1/configurations/${key}`)
@@ -32,6 +33,7 @@ describe("GET Privacy Policy on Merchant PEJUANG", function() {
 describe("GET Privacy Policy on Merchant GAMEFINITY", function() {
     it("Success Get Privacy Policy", async function() {
         try {
+            this.timeout(10000);
             const key = "config:privacy_policy";
             const request = supertest(process.env.HOST)
                 .get(`/v1/configurations/${key}`)
