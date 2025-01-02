@@ -28,7 +28,7 @@
 
     "getTNC" : "mocha test/morbius-external/anonymous/configuration/tnc.js",
 
-    "test": "mocha test/morbius-external/anonymous/**/*.js"
+    "testAnonym": "mocha test/morbius-external/anonymous/**/*.js"
   },
   "author": "Bernadeta",
   "license": "ISC",
